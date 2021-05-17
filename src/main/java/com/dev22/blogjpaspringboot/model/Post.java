@@ -11,7 +11,6 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
-import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="TB_POST")

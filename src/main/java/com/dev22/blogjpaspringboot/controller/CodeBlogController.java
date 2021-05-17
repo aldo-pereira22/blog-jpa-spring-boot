@@ -42,11 +42,12 @@ public class CodeBlogController {
 	public String getPostForm() {
 		return "postForm";
 	}
+	
 	@RequestMapping(value = "/newpost", method = RequestMethod.POST)
-	public String savePost(@Validated Post post, BindingResult result, RedirectAttributes atributes) {
+	public String savePost(@Validated Post post, BindingResult result, RedirectAttributes attributes) {
 		
 		if(result.hasErrors()) {
-			atributes.addFlashAttribute("mensagem", "Verifique se os campos obrigatórios foram preenchidos! ");
+			attributes.addFlashAttribute("mensagem", "Verifique se os campos obrigatórios foram preenchidos! ");
 			return "redirect:/newpost";
 		}
 		post.setData(LocalDate.now());
