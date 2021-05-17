@@ -14,13 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.dev22.blogjpaspringboot.model.Post;
-import com.dev22.blogjpaspringboot.service.CodeBlogService;
+import com.dev22.blogjpaspringboot.service.CodeblogService;
 
 @Controller
-public class CodeBlogController {
+public class CodeblogController {
 
 	@Autowired
-	CodeBlogService codBlogService;
+	CodeblogService codBlogService;
 	
 	@RequestMapping(value = "/posts", method = RequestMethod.GET)
 	public ModelAndView getPosts() {
@@ -30,14 +30,16 @@ public class CodeBlogController {
 		return mv;		
 	}
 
-	@RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
-	public ModelAndView getPostDetails( @PathVariable("id") Long id ) {
-		ModelAndView mv =  new ModelAndView("postDetails ");
+	@RequestMapping(value="/posts/{id}", method=RequestMethod.GET)
+	public ModelAndView getPostDetails(@PathVariable("id") long id ) {
+		ModelAndView mv =  new ModelAndView("postDetails");
 		Post post = codBlogService.findById(id);
 		mv.addObject("post", post);
 		return mv;		
 	}
-	
+
+
+
 	@RequestMapping(value = "/newpost", method = RequestMethod.GET)
 	public String getPostForm() {
 		return "postForm";

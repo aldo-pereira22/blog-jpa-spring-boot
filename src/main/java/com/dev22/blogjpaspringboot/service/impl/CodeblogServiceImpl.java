@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.dev22.blogjpaspringboot.model.Post;
 import com.dev22.blogjpaspringboot.repository.CodeBlogRepository;
-import com.dev22.blogjpaspringboot.service.CodeBlogService;
+import com.dev22.blogjpaspringboot.service.CodeblogService;
 
 @Service
-public class CodeBlogServiceImpl implements CodeBlogService{
+public class CodeblogServiceImpl implements CodeblogService{
 
 	@Autowired
 	CodeBlogRepository codeBlogRepository;
